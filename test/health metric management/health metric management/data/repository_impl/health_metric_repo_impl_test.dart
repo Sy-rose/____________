@@ -15,16 +15,15 @@ void main() {
     healthMetricRepositoryUnderTest =
         HealthMetricRepositoryImplementation(mockHealthMetricRemoteDataSource);
   });
-  const testHealthMetric = HealthMetric(
+  final testHealthMetric = HealthMetric(
     id: '1',
     patientId: "p001",
-    date: 'DateTime',
+    date: DateTime(2024, 9, 10),
     systolicBP: 120.0,
     diastolicBP: 80.0,
     heartRate: 70.0,
     weight: 70.0,
     bloodSugar: 100.0,
-    healthmetric: [],
   );
   // ignore: unused_local_variable
   final healthmetricList = [testHealthMetric];

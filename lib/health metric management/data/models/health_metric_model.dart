@@ -22,14 +22,14 @@ class HealthMetricModel extends HealthMetric {
           bloodSugar: bloodSugar,
         );
 
-  // Factory method to create a HealthMetricModel from a Map
+// Factory method to create a HealthMetricModel from a Map
   factory HealthMetricModel.fromMap(Map<String, dynamic> map) {
     return HealthMetricModel(
       id: map['id'] as String,
       patientId: map['patientId'] as String,
       date: map['date'] is String
           ? DateTime.tryParse(map['date']) ?? DateTime.now()
-          : map['date'] as DateTime, // In case it's already a DateTime object
+          : map['date'] as DateTime,
       systolicBP: (map['systolicBP'] as num?)?.toDouble() ?? 0.0,
       diastolicBP: (map['diastolicBP'] as num?)?.toDouble() ?? 0.0,
       heartRate: (map['heartRate'] as num?)?.toDouble() ?? 0.0,
@@ -38,10 +38,9 @@ class HealthMetricModel extends HealthMetric {
     );
   }
 
-  // Factory method to create a HealthMetricModel from a JSON string
-  factory HealthMetricModel.fromJson(String source) {
-    return HealthMetricModel.fromMap(json.decode(source));
-  }
+ // Factory method to create a HealthMetricModel from a JSON string
+  factory HealthMetricModel.fromJson(String source) =>
+      HealthMetricModel.fromMap(json.decode(source));
 
   // Method to convert an instance to a map
   Map<String, dynamic> toMap() {
@@ -58,7 +57,6 @@ class HealthMetricModel extends HealthMetric {
   }
 
   // Method to convert a HealthMetricModel to a JSON string
-  String toJson() {
-    return json.encode(toMap());
-  }
+  String toJson() => json.encode(toMap());
 }
+  

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import '../../domain/entities/health_metric.dart';
+
 abstract class HealthMetricState extends Equatable {
   const HealthMetricState();
 
@@ -23,7 +24,20 @@ class HealthMetricLoaded extends HealthMetricState {
   List<Object?> get props => [healthMetrics];
 }
 
-// Error State (with error message)
+class HealthMetricAdded extends HealthMetricState {}
+
+class HealthMetricDelete extends HealthMetricState {}
+
+class HealthMetricUpdated extends HealthMetricState {
+  final HealthMetric newHealthMetric;
+
+  const HealthMetricUpdated(this.newHealthMetric);
+
+  @override
+  List<Object?> get props => [newHealthMetric];
+}
+
+// ignore: non_constant_identifier_names
 class HealthMetricError extends HealthMetricState {
   final String message;
 

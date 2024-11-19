@@ -1,9 +1,7 @@
-// ignore_for_file: unused_import
 import 'package:dartz/dartz.dart';
 import 'package:health_metrics_tracker/core/errors/exceptions.dart';
 import 'package:health_metrics_tracker/core/errors/failure.dart';
 import 'package:health_metrics_tracker/health%20metric%20management/data/data_source/health_metric_remote_datasource.dart';
-import 'package:health_metrics_tracker/health%20metric%20management/data/models/health_metric_model.dart';
 import 'package:health_metrics_tracker/health%20metric%20management/domain/repositories/health_metric_repos.dart';
 
 class HealthMetricRepositoryImplementation implements HealthMetricRepository {
@@ -62,7 +60,6 @@ class HealthMetricRepositoryImplementation implements HealthMetricRepository {
     }
   }
 
-  @override
   Future<Either<Failure, List>> getHealthMetricsByPatientId(
       String patientId) async {
     try {
@@ -74,5 +71,8 @@ class HealthMetricRepositoryImplementation implements HealthMetricRepository {
       return Left(GeneralFailure(message: e.toString()));
     }
   }
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 

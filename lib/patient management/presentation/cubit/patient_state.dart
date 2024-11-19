@@ -1,4 +1,4 @@
-// part of 'patient_cubit.dart'; 
+// part of 'patient_cubit.dart';
 // Define different states for PatientCubit
 import 'package:equatable/equatable.dart';
 import 'package:health_metrics_tracker/patient%20management/domain/entities/patient.dart';
@@ -16,7 +16,7 @@ class PatientInitial extends PatientState {}
 // Loading State
 class PatientLoading extends PatientState {}
 
-// Success State (with List<Patient>)
+// Success State (with List<HealthMetric>)
 class PatientLoaded extends PatientState {
   final List<Patient> patients;
 
@@ -24,6 +24,19 @@ class PatientLoaded extends PatientState {
 
   @override
   List<Object?> get props => [patients];
+}
+
+class PatientAdded extends PatientState {}
+
+class PatientDelete extends PatientState {}
+
+class PatientUpdated extends PatientState {
+  final Patient newPatient;
+
+  const PatientUpdated(this.newPatient);
+
+  @override
+  List<Object> get props => [newPatient];
 }
 
 // Error State (with error message)

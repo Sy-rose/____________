@@ -8,7 +8,7 @@ import 'package:health_metrics_tracker/health%20metric%20management/domain/entit
   Future<Either<Failure, void>> addHealthMetric(HealthMetric healthMetric);
   Future<Either<Failure, void>> editHealthMetric(HealthMetric healthMetric);
   Future<Either<Failure, void>>getHealthMetricById(String id);
-  Future<Either<Failure, List>> getHealthMetricsByPatientId(String patientId);
+  Future<Either<Failure, List<HealthMetric>>> getAllHealthMetricsByPatientId(String patientId);
   Future<Either<Failure, void>> deleteHealthMetric(String id);
 }
 

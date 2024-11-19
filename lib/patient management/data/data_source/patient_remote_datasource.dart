@@ -4,6 +4,8 @@ import 'package:health_metrics_tracker/patient%20management/domain/entities/pati
 
 
 abstract class PatientRemoteDataSource {
+  PatientRemoteDataSource(Object object);
+
   Future<void> addPatient(Patient patient);
   Future<void> editPatient(Patient patient);
   Future<Patient?>getPatientById(String id);

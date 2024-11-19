@@ -4,11 +4,18 @@ import 'package:health_metrics_tracker/patient%20management/domain/entities/pati
 import 'package:health_metrics_tracker/patient%20management/domain/repositories/patient_repo.dart';
 
 class GetAllPatients {
-  final PatientRepository repository;
+  late final PatientRepository repository;
 
-  GetAllPatients({required this.repository});
+  GetAllPatients({required Object repository});
 
-  Future<Either<Failure, List<Patient>>> call() async {
-    return await repository.getAllPatients();
-  }
+  call() {}
+}
+
+Future<Either<Failure, List<Patient>>> call() async {
+  return await repository.getAllPatients();
+}
+
+//
+mixin repository {
+  static getAllPatients() {}
 }

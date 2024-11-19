@@ -3,8 +3,7 @@ import 'package:equatable/equatable.dart';
 class HealthMetric extends Equatable {
   final String id;
   final String patientId;
-  // ignore: prefer_typing_uninitialized_variables
-  final date;
+  final DateTime date;
   final double systolicBP;
   final double diastolicBP;
   final double heartRate;
@@ -19,7 +18,8 @@ class HealthMetric extends Equatable {
     required this.diastolicBP,
     required this.heartRate,
     required this.weight,
-    required this.bloodSugar, required List healthmetric,
+    required this.bloodSugar, 
+    // required List healthmetric,
   });
 
   @override

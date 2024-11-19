@@ -22,7 +22,7 @@ class HealthMetricFirebaseRemoteDatasource
           diastolicBP: healthMetric.diastolicBP,
           heartRate: healthMetric.heartRate,
           weight: healthMetric.weight,
-          bloodSugar: healthMetric.bloodSugar);
+          bloodSugar: healthMetric.bloodSugar,);
       await healthMetricDocRef.set(healthMetricModel.toMap());
     } on FirebaseException catch (e) {
       throw APIException(
@@ -88,7 +88,7 @@ class HealthMetricFirebaseRemoteDatasource
         diastolicBP: data['diastolicBP'],
         heartRate: data['heartRate'],
         weight: data['weight'],
-        bloodSugar: data['bloodSugar'], healthmetric: const [],
+        bloodSugar: data['bloodSugar'],
       );
     } on FirebaseException catch (e) {
       throw APIException(
@@ -124,7 +124,7 @@ class HealthMetricFirebaseRemoteDatasource
           diastolicBP: data['diastolicBP'],
           heartRate: data['heartRate'],
           weight: data['weight'],
-          bloodSugar: data['bloodSugar'], healthmetric: const [],
+          bloodSugar: data['bloodSugar'],
         );
       }).toList();
     } on FirebaseException catch (e) {

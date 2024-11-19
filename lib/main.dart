@@ -34,7 +34,6 @@ void main() async {
     heartRate: 70, // Should be an integer, not a decimal
     weight: 70.0, // Weight can remain as a decimal (double)
     bloodSugar: 100.0,
-    healthmetric: const [], // Blood sugar can remain as a decimal (double)
   );
 
   await datasource.addHealthMetric(testHealthMetric);
